@@ -1,0 +1,18 @@
+12 epochs, 16 batch size, lr 0,0001
+vgg con lr = 0.0001
+C value = 1e-05
+Accuracy validation 0.8468468468468469
+C value = 0.0001
+Accuracy validation 0.8708708708708709
+C value = 0.001
+Accuracy validation 0.8828828828828829
+C value = 0.01
+Accuracy validation 0.8828828828828829
+C value = 0.1
+Accuracy validation 0.8828828828828829
+C value = 1
+Accuracy validation 0.8828828828828829
+C value = 10
+Accuracy validation 0.8828828828828829
+C value = 100
+Accuracy validation 0.8828828828828829
