@@ -13,13 +13,13 @@ for y, path in enumerate(path_input):
     images_path_sag.sort()
     print(images_path[0:10])
     print(images_path_sag[0:10])
-    list_pos = random.sample(range(0,len(images_path)), int(len(images_path)))
+    list_pos = random.sample(range(0,len(images_path)), int(len(images_path)/10))
 
     #list_val = random.sample(images_path, int(len(images_path)/10))
 
     print(list_pos)
     print(sorted(list_pos))
 
-    '''for pos in list_pos:
+    for pos in list_pos:
         os.rename(os.path.join(path,images_path[pos]), os.path.join(path_out[y], images_path[pos]))
-        os.rename(os.path.join(path_input_sag[y],images_path_sag[pos]), os.path.join(path_out_sag[y], images_path_sag[pos]))'''
+        os.rename(os.path.join(path_input_sag[y],images_path_sag[pos]), os.path.join(path_out_sag[y], images_path_sag[pos]))

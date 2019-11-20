@@ -27,7 +27,7 @@ def tuning(device, num_classes, batch_size, num_epochs, feature_extract, dataloa
         model_ft = model_ft.to(device)
         params_to_update = []
         for name,param in model_ft.named_parameters():
-            if name.startswith("classifier.3"):
+            if name.startswith("classifier"):
                 params_to_update.append(param)
                 param.requires_grad = True
                 print("\t",name)
@@ -45,7 +45,7 @@ def tuning(device, num_classes, batch_size, num_epochs, feature_extract, dataloa
         #create dictionary for test set
         test_dict = test_dic()
         # Train and evaluate
-        _, train_acc_history, val_acc_history, _, y_true, y_pred = train_model(model_ft, dataloaders_dict_x, dataloaders_dict_y, test_dict, criterion, optimizer_ft,exp_lr_scheduler, num_epochs, device, result_file)
+        _, train_acc_history, val_acc_history, y_true, y_pred = train_model(model_ft, dataloaders_dict_x, dataloaders_dict_y, test_dict, criterion, optimizer_ft,exp_lr_scheduler, num_epochs, device, result_file)
 
 
         return train_acc_history, val_acc_history, y_true, y_pred

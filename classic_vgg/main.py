@@ -1,5 +1,4 @@
 from tuning import *
-import torchvision
 from torchvision import datasets, models, transforms
 import matplotlib.pyplot as plt
 import torch
@@ -31,7 +30,7 @@ def main():
 
     # Data augmentation and normalization for training
     # Just normalization for validation
-    data_transforms = {
+    '''data_transforms = {
         'train': transforms.Compose([
             transforms.ToTensor(),
             #transforms.Normalize([0.3300, 0.3300, 0.3300], [0.2605, 0.2605, 0.2605])
@@ -67,19 +66,19 @@ def main():
     #from_scratch(network, "all_model", device, num_classes, batch_size, 20, False, dataloaders_dict)
     train_acc_history, val_acc_history, y_true, y_pred = tuning(network, device, num_classes, batch_size, 12, True, dataloaders_dict)
 
-    plot_confusion_matrix(y_true, y_pred, classes)
-    '''train_acc_history =  [(0.38304972), (0.49983317), (0.59993327), (0.70937604), (0.79612946), (0.84984985), (0.90323657), (0.91925259), (0.92959626), (0.94661328), (0.95028362), (0.94627961), (0.94627961), (0.94894895), (0.94594595)]
-    val_acc_history = [(0.46546547), (0.55255255), (0.57657658), (0.62762763), (0.6996997), (0.72672673), (0.77477477), (0.77777778), (0.79279279), (0.7957958), (0.7957958), (0.81981982), (0.83183183), (0.81981982), (0.82282282)]
-    
+    plot_confusion_matrix(y_true, y_pred, classes)'''
+    train_acc_history =  [(0.3460452), (0.53248588), (0.6680791), (0.84463277), (0.8799435), (0.95903955), (0.95056497), (0.81920904), (0.89124294), (0.92090395)]
+
+    val_acc_history = [(0.52631579), (0.47368421), (0.40789474), (0.57894737), (0.68421053), (0.73684211), (0.71052632), (0.61842105), (0.61842105), (0.69736842)]
     plt.title("ResNeXt accuracy from scratch")
     plt.xlabel("Training Epochs")
     plt.ylabel("Accuracy")
-    plt.plot(range(1,15+1),train_acc_history,label="Training")
-    plt.plot(range(1,15+1),val_acc_history,label="Validation")
+    plt.plot(range(1,10+1),train_acc_history,label="Training")
+    plt.plot(range(1,10+1),val_acc_history,label="Validation")
     plt.ylim((0,1.0))
-    plt.xticks(np.arange(1, 15+1, 1.0))
+    plt.xticks(np.arange(1, 10+1, 1.0))
     plt.legend()
-    plt.show()'''
+    plt.show()
 
 
 

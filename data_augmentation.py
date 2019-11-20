@@ -7,8 +7,10 @@ import skimage as sk
 from skimage import transform
 from skimage import util
 from skimage import io
+from skimage import exposure
 import torchvision
 import csv
+from PIL import Image, ImageEnhance 
 
 # Specify the .jpg folder path
 folder_path = ['multi_input/dataset_128/tra/train/1/','multi_input/dataset_128/tra/train/2/','multi_input/dataset_128/tra/train/3/',
@@ -44,4 +46,8 @@ for path in folder_path:
 
         sk.io.imsave(new_file_path, img_not)
 
-        
+        image_dark = exposure.adjust_gamma(image_to_transform, gamma=1.5,gain=1)
+
+        new_file_path = '%s/%s_bright.jpg' % (path, image)
+
+        sk.io.imsave(new_file_path, image_dark)

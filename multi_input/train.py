@@ -55,14 +55,7 @@ def train_model(model, dataloaders_dict_x, dataloaders_dict_y, test_dict, criter
         best_model_wts = copy.deepcopy(model.state_dict())
         best_acc = 0.0
         best_acc_3 = 0.0
-
-        index = 0
-
-        '''low_gain = 0
-        threshold = 0.03
-
-        top_5 = 0'''
-
+        
         for epoch in range(num_epochs):
             print('Epoch {}/{}'.format(epoch, num_epochs - 1))
             print('-' * 10)
