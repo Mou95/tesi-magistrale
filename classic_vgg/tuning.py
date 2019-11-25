@@ -18,7 +18,7 @@ def test_dic():
     return test_dict
 
 def tuning(network, device, num_classes, batch_size, num_epochs, feature_extract, dataloaders_dict):
-    result_file = open("result_crop_128_sag.txt","w+")
+    result_file = open("nocrop_with28features.txt","w+")
     result_file.write("12 epochs, 16 batch size, lr 0,0001\n")
     for net in network:
         for learning in [0.0001]:

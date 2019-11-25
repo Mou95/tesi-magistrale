@@ -30,12 +30,13 @@ class VGG(nn.Module):
     def forward(self, x, y):
         x = self.featuresX(x)
         y = self.featuresY(y)
-        x = self.avgpool(x)
-        y = self.avgpool(y)
-        N ,_,_,_ = x.size()
-        x = x.view(N,-1)
-        y = y.view(N,-1)
         z = torch.cat((x,y),1)
+        #print(z.shape)
+        z = self.avgpool(z)
+        #print(z.shape)
+        N ,_,_,_ = z.size()
+        z = z.view(N,-1)
+        #print(z.shape)
         #x = torch.flatten(x, 1)
         z = self.classifier(z)
         return z

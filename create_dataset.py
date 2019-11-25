@@ -49,7 +49,7 @@ def extractImageTrain(locations, path):
         img_3d = color.gray2rgb(img_2d_scaled)
         if crop:
             x,y = image[1][0], image[1][1] 
-            img_3d = img_3d[y-64:y+64, x-64:x+64]
+            img_3d = img_3d[y-32:y+32, x-32:x+32]
             resized = cv2.resize(img_3d, (224,224), interpolation = cv2.INTER_AREA)
         else:
             resized = cv2.resize(img_3d, (224,224), interpolation = cv2.INTER_AREA)
@@ -61,8 +61,8 @@ def extractImageTrain(locations, path):
 
 
 path='../PROSTATEx/'
-path_image = ['multi_input/dataset_128/sag/train/1/','multi_input/dataset_128/sag/train/2/','multi_input/dataset_128/sag/train/3/',
-'multi_input/dataset_128/sag/train/4/','multi_input/dataset_128/sag/train/5/']
+path_image = ['multi_input/dataset_64/tra/train/1/','multi_input/dataset_64/tra/train/2/','multi_input/dataset_64/tra/train/3/',
+'multi_input/dataset_64/tra/train/4/','multi_input/dataset_64/tra/train/5/']
 lstFilesDCM = []  # create an empty list
 
 with open('../PROSTATEx/ProstateX-2-Findings-Train.csv') as find_file:
@@ -75,11 +75,11 @@ with open('../PROSTATEx/ProstateX-2-Findings-Train.csv') as find_file:
                 line_count += 1
             else:
                 for row1 in image_reader:
-                    if row1[0] == row[0] and ('sag0' in row1[1]) and row[1] == row1[3]:
+                    if row1[0] == row[0] and ('tra0' in row1[1] or 'Grappa30' in row1[1]) and row[1] == row1[3]:
                         path_patient = path + row[0]
                         for dirName, subdirList, fileList in os.walk(path_patient):
                             for filename in fileList:
-                                if ('t2tsesag' in dirName):  # check whether the file's DICOM
+                                if ('t2tsetra' in dirName or 'Grappa30' in dirName):  # check whether the file's DICOM
                                     lstFilesDCM.append((os.path.join(dirName,filename),sliceNumber(row1[6]), row[1], row[4])) 
 
 finalList = []                                                                   
@@ -88,7 +88,7 @@ for i, image in enumerate(lstFilesDCM):
     if isInstanceNumber(image):
         finalList.append(image)
 
-f= open("train_sag.txt","w+")        
+f= open("train_tra.txt","w+")        
 for image in finalList:
     f.write(str(image)+'\n')
 

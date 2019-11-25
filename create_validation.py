@@ -1,10 +1,10 @@
 import os
 import random
 
-path_input = ['multi_input/dataset_128/tra/train/1/','multi_input/dataset_128/tra/train/2/','multi_input/dataset_128/tra/train/3/','multi_input/dataset_128/tra/train/4/','multi_input/dataset_128/tra/train/5/']
-path_out = ['multi_input/dataset_128/tra/val/1/','multi_input/dataset_128/tra/val/2/','multi_input/dataset_128/tra/val/3/','multi_input/dataset_128/tra/val/4/','multi_input/dataset_128/tra/val/5/']
-path_input_sag = ['multi_input/dataset_128/sag/train/1/','multi_input/dataset_128/sag/train/2/','multi_input/dataset_128/sag/train/3/','multi_input/dataset_128/sag/train/4/','multi_input/dataset_128/sag/train/5/']
-path_out_sag = ['multi_input/dataset_128/sag/val/1/','multi_input/dataset_128/sag/val/2/','multi_input/dataset_128/sag/val/3/','multi_input/dataset_128/sag/val/4/','multi_input/dataset_128/sag/val/5/']
+path_input = ['multi_input/dataset_64/tra/train/1/','multi_input/dataset_64/tra/train/2/','multi_input/dataset_64/tra/train/3/','multi_input/dataset_64/tra/train/4/','multi_input/dataset_64/tra/train/5/']
+path_out = ['multi_input/dataset_64/tra/val/1/','multi_input/dataset_64/tra/val/2/','multi_input/dataset_64/tra/val/3/','multi_input/dataset_64/tra/val/4/','multi_input/dataset_64/tra/val/5/']
+path_input_sag = ['multi_input/dataset_64/sag/train/1/','multi_input/dataset_64/sag/train/2/','multi_input/dataset_64/sag/train/3/','multi_input/dataset_64/sag/train/4/','multi_input/dataset_64/sag/train/5/']
+path_out_sag = ['multi_input/dataset_64/sag/val/1/','multi_input/dataset_64/sag/val/2/','multi_input/dataset_64/sag/val/3/','multi_input/dataset_64/sag/val/4/','multi_input/dataset_64/sag/val/5/']
 
 for y, path in enumerate(path_input):
     images_path = os.listdir(path)

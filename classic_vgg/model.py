@@ -238,8 +238,9 @@ def initialize_model(model_name, num_classes, feature_extract, use_pretrained=Tr
         """ VGG16
         """
         model_ft = models.vgg19(pretrained=True)
-        print(model_ft.features)
         #set_parameter_requires_grad(model_ft, feature_extract)
+        model_ft.features = model_ft.features[:28]
+        print(model_ft.features)
         num_ftrs = model_ft.classifier[6].in_features
         model_ft.classifier[6] = nn.Linear(num_ftrs,num_classes)
         

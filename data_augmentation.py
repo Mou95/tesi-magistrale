@@ -13,9 +13,9 @@ import csv
 from PIL import Image, ImageEnhance 
 
 # Specify the .jpg folder path
-folder_path = ['multi_input/dataset_128/tra/train/1/','multi_input/dataset_128/tra/train/2/','multi_input/dataset_128/tra/train/3/',
-'multi_input/dataset_128/tra/train/4/','multi_input/dataset_128/tra/train/5/','multi_input/dataset_128/sag/train/1/','multi_input/dataset_128/sag/train/2/','multi_input/dataset_128/sag/train/3/',
-'multi_input/dataset_128/sag/train/4/','multi_input/dataset_128/sag/train/5/']
+folder_path = ['multi_input/dataset_64/tra/train/1/','multi_input/dataset_64/tra/train/2/','multi_input/dataset_64/tra/train/3/',
+'multi_input/dataset_64/tra/train/4/','multi_input/dataset_64/tra/train/5/','multi_input/dataset_64/sag/train/1/','multi_input/dataset_64/sag/train/2/','multi_input/dataset_64/sag/train/3/',
+'multi_input/dataset_64/sag/train/4/','multi_input/dataset_64/sag/train/5/']
 #folder_path = ['test_image']
 # Specify the output jpg/png folder path
 

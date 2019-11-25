@@ -15,14 +15,14 @@ def main():
 
     # Top level data directory. Here we assume the format of the directory conforms
     #   to the ImageFolder structure
-    data_dir_x = "dataset_128/tra"
-    data_dir_y = "dataset_128/sag"
+    data_dir_x = "dataset_64/tra"
+    data_dir_y = "dataset_64/sag"
     # Number of classes in the dataset
     num_classes = 5
     # Batch size for training (change depending on how much memory you have)
     batch_size = 2
     # Number of epochs to train for
-    num_epochs = 20
+    num_epochs = 10
 
     # Data augmentation and normalization for training
     # Just normalization for validation
